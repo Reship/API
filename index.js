@@ -14,7 +14,8 @@ const createPost = async (newpost)=>{
     method:"POST",
     body:JSON.stringify(newpost),
     headers: {"Content-type":"appilication/json; charset=UTF-8"},
-  })
+  });
+  
   const post = await response.json();
   return post;
 };
@@ -41,6 +42,13 @@ getButton.addEventListener("click",async() => {
   document.querySelector('#table').innerHTML = table;
 });
 
-createButton.addEventListener('click',() => {
- 
+createButton.addEventListener('click',async () => {
+  const newPost ={
+    title: "New Post Title",
+    body:"New Post Body",
+    userId:1,
+
+  };
+  const createdpost = await createPost(newPost);
+  console.log(createdpost);
 })
