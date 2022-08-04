@@ -32,3 +32,7 @@ getButton.addEventListener("click",async() => {
   </table>`;
   document.querySelector('#table').innerHTML = table;
 });
+
+createButton.addEventListener('click',() => {
+  alert('create post')
+})
