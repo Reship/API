@@ -38,7 +38,7 @@ getButton.addEventListener("click",async() => {
   const table = `<table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
+      <th scope="col">ID</th>
       <th scope="col">Title</th>
     </tr>
   </thead>
