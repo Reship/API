@@ -2,15 +2,23 @@ const apiEndPoint ="https://jsonplaceholder.typicode.com/posts";
 
 const getButton = document.querySelector("#getPost");
 const createButton = document.querySelector("#createPost");
-const putButton = document.querySelector("#putPost");
-const patchButton = document.querySelector("#patchPost");
-const deleteButton = document.querySelector("#deletePost");
 
 const getPosts = async () =>{
   const response = await fetch(apiEndPoint);
   const posts = await response.json();
   return posts;
 };
+
+const createPost = async (newpost)=>{
+  const response = await fetch(apiEndPoint,{
+    method:"POST",
+    body:JSON.stringify(newpost),
+    headers: {"Content-type":"appilication/json; charset=UTF-8"},
+  })
+  const post = await response.json();
+  return post;
+};
+
 getButton.addEventListener("click",async() => {
   const posts = await getPosts();
 
@@ -34,5 +42,5 @@ getButton.addEventListener("click",async() => {
 });
 
 createButton.addEventListener('click',() => {
-  alert('create post')
+ 
 })
